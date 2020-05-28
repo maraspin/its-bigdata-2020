@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "firstName": "Terry",
+    "lastName": "Black",
+    "soreThroat": false,
+    "temperature": 36.4
+  },
+  {
+    "id": 2,
+    "firstName": "John",
+    "lastName": "Doe",
+    "soreThroat": true,
+    "temperature": 38.2
+  },
+  {
+    "id": 3,
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "soreThroat": true,
+    "temperature": 37.1
+  },
+  {
+    "id": 4,
+    "firstName": "Shane",
+    "lastName": "Johnson",
+    "soreThroat": false,
+    "temperature": 40.5
+  },
+  {
+    "id": 5,
+    "firstName": "Berry",
+    "lastName": "Cherry",
+    "soreThroat": false,
+    "temperature": 36.2
+  },
+  {
+    "id": 6,
+    "firstName": "Tim",
+    "lastName": "Green",
+    "soreThroat": false,
+    "temperature": 36.6
+  }
+]
