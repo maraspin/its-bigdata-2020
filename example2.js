@@ -5,12 +5,14 @@ const population = require('./population.json')
 
 // Map Function - Returns interesting pieces of information
 const temp = population.map(function(item) {
-  return [ item.soreThroat, item.temperature ]
+  return { "soreThroat": item.soreThroat, "temperature": item.temperature }
 });
+
+console.log(temp);
 
 let selected = 0;
 
-const avg = population.reduce(function (result, item, index, values) {
+const avg = temp.reduce(function (result, item, index, values) {
   if (item.soreThroat && item.temperature > 37) {
       console.log(item);
       selected++;
