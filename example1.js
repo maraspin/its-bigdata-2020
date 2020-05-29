@@ -24,8 +24,6 @@ const selectedPatient = temp.filter(item => (item.soreThroat && item.temperature
 console.log("> Relevant data only (\"horizontal\" filtering)");
 console.log(selectedPatient);
 
-return;
-
 
 // Reduce applies function to array elements, producing a unique result
 const avg = selectedPatient.reduce(function (result, item, index, values) {
@@ -36,4 +34,5 @@ const avg = selectedPatient.reduce(function (result, item, index, values) {
   return result;
 }, 0);
 
+console.log("> Result: ")
 console.log(avg);
