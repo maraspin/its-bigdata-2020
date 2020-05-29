@@ -3,11 +3,18 @@
 
 const population = require('./population.json')
 
-// Map Function - Returns interesting pieces of information only - prepares data
-const temp = population.map(function(item) {
+console.log(population);
+
+let estraidatirilevanti = function(item) {
   return { soreThroat: item.soreThroat, temperature: item.temperature }
-});
-// console.log(temp);
+};
+
+
+// Map Function - Returns interesting pieces of information only - prepares data
+const temp = population.map(estraidatirilevanti);
+console.log(temp);
+
+// return;
 
 // Filters does what we expect... filters elements of the array
 const selectedPatient = temp.filter(item => (item.soreThroat && item.temperature > 37));
