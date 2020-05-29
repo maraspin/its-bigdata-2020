@@ -3,22 +3,29 @@
 
 const population = require('./population.json')
 
+console.log("> Considered population");
 console.log(population);
 
-let estraidatirilevanti = function(item) {
+let extractrelevantdata = function(item) {
   return { soreThroat: item.soreThroat, temperature: item.temperature }
 };
 
 
 // Map Function - Returns interesting pieces of information only - prepares data
-const temp = population.map(estraidatirilevanti);
+const temp = population.map(extractrelevantdata);
+
+console.log("> Relevant data only (\"vertical\" filtering):");
 console.log(temp);
 
-// return;
 
 // Filters does what we expect... filters elements of the array
 const selectedPatient = temp.filter(item => (item.soreThroat && item.temperature > 37));
+
+console.log("> Relevant data only (\"horizontal\" filtering)");
 console.log(selectedPatient);
+
+return;
+
 
 // Reduce applies function to array elements, producing a unique result
 const avg = selectedPatient.reduce(function (result, item, index, values) {
