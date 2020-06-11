@@ -1,18 +1,10 @@
-import datetime
-import requests
-import redis
+from elasticsearch import Elasticsearch
+es = Elasticsearch([{'host': 'bigdata.its', 'port': 9200}])
 
-redis = redis.Redis(host='localhost', port=6379, db=0)
+if es.ping():
+	print('Connected!')
+else:
+        print('Damn!')
 
-begin_time = datetime.datetime.now()
-data = redis.get('italy')
-end_time = datetime.datetime.now()
-
-if (data == None):
-    res = requests.get('https://www.mocky.io/v2/5ed60dcf3400007b0006d626?mocky-delay=1000ms', verify=False)
-    data = res.content
-    redis.set('italy', data)
-    end_time = datetime.datetime.now()
-
-print(data)
-print((end_time - begin_time))
+res = es.get(index="bank", id=14)
+print(res)
