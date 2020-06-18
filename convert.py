@@ -1,9 +1,13 @@
 import json
+import sys
 
-f = open("es-account-data.json", "w")
+print(sys.argv[1])
+exit
+
+f = open("es-" + sys.argv[1], "w")
 f.write("")
-with open('es-account-data.json', 'a') as json_file:
-    with open('source-data.json') as data_file:          
+with open("es-" + sys.argv[1], 'a') as json_file:
+    with open(sys.argv[1]) as data_file:          
         data = json.load(data_file)
         for person in data:
             indexdict = {

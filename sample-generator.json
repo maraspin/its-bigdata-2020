@@ -1,0 +1,27 @@
+[
+  '{{repeat(10, 10)}}',
+  {
+    index: '{{index(1)}}',
+    countryOfOrigin: '{{country()}}',
+    dateInvented: '{{date(new Date(1970, 0, 1), new Date(1980,11,31), "YYYY-MM-dd")}}',
+    sport: function (tags) {
+      var strings = [];
+      strings.push("soccer");
+      strings.push("baseball");
+      strings.push("ice hockey");
+      strings.push("basketball");
+      strings.push("volleyball");
+      strings.push("table tennis");
+      strings.push("fencing");
+      strings.push("boxing");
+      strings.push("martial arts");
+      strings.push("handball");
+      strings.push("polo");
+      strings.push("water polo");
+      strings.push("athletics");
+      strings.push("rowing");
+      return strings[this.index -1];
+    },
+    description: '{{lorem(2)}}'
+  }
+]
