@@ -7,7 +7,7 @@ fi
 
 INDEX=$1
 
-python ./convert.py
+python3 ./convert.py account-data.json
 curl -H "Content-Type: application/json" -XDELETE "bigdata.its:9200/${INDEX}"
 
 if [ $# -eq 1 ]; then
