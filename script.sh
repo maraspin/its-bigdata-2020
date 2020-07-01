@@ -12,6 +12,7 @@ curl -H "Content-Type: application/json" -XDELETE "bigdata.its:9200/${INDEX}"
 
 if [ $# -eq 1 ]; then
   echo "Adding Mapping"
+  curl -H "Content-Type: application/json" -XPUT "bigdata.its:9200/${INDEX}"
   curl -H "Content-Type: application/json" -XPUT "bigdata.its:9200/${INDEX}" --data-binary "@analyzer.json"
   curl -H "Content-Type: application/json" -XPUT "bigdata.its:9200/${INDEX}/_mapping" --data-binary "@mapping.json"
 fi
