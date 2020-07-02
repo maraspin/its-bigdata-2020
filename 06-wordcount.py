@@ -1,4 +1,6 @@
 import pyspark
+
+# Creates context - local implies localhost is used, * is to enable parallelism on all available cores
 sc = pyspark.SparkContext('local[*]')
 
 txt = sc.textFile('file:////srv/apps/its-bigdata-2020/samples/simple.txt')
