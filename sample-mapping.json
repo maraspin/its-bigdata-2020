@@ -1,0 +1,28 @@
+ {
+  "properties": {
+    "index": {
+      "type": "integer"
+    },
+    "countryOfOrigin": {
+      "type": "keyword"
+    },
+    "dateInvented": {
+      "type": "date",
+      "format": "YYYY-mm-dd"
+    },
+    "sport": {
+      "type": "text",
+      "analyzer": "simple",
+      "fields": {
+        "raw": {
+          "type":  "keyword"
+        }
+      }
+    },
+    "description": {
+      "type": "text",
+      "analyzer": "english"
+    }
+  }
+}
+

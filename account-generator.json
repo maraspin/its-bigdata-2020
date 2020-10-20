@@ -1,0 +1,110 @@
+[
+  '{{repeat(1000, 1000)}}',
+  {
+    index: '{{index(1)}}',
+    creationDate: '{{date(new Date(2018, 0, 1), new Date(2020, 5, 18), "YYYY-MM-dd")}}',
+    firstName: '{{firstName()}}',
+    lastName: '{{surname()}}',
+    company: '{{company().charAt(0).toUpperCase() + company().slice(1)}}',
+    email: '{{email()}}',
+    address: '{{integer(100, 999)}} {{street()}}',
+    city: '{{city()}}',
+    state: '{{state(true)}}',
+    zip: '{{integer(10000, 99999)}}',
+    location: {
+      lat: '{{floating(-90.000001, 90)}}',
+      lon: '{{floating(-180.000001, 180)}}'
+    },
+    dateOfBirth: '{{date(new Date(1970, 0, 1), new Date(1999, 12, 31), "MM/dd/YYYY")}}',
+    job: '{{random("programmer", "manager", "CEO", "CTO", "shop assistant", "teacher", "trainer", "architect", "engineer", "security guard", "businessman", "entrapreneur", "plumber", "carpenter", "repairman", "maintenance manager")}}',
+    balance: '{{floating(10, 200000, 2, "0.00")}}',
+    authentication: '{{random("2FA", "standard", "token")}}',
+    about: function (tags) {
+
+      var parts = this.dateOfBirth.split('/');
+      var mydate = new Date(parts[2], parts[0] - 1, parts[1]);
+      var ageDifMs = Date.now() - mydate.getTime();
+      var ageDate = new Date(ageDifMs);
+      var ageYear = ageDate.getUTCFullYear();
+      var age = Math.abs(ageYear - 1970);
+
+      var hobby = ['hockey games', 'football games', 'soccer games', 'concerts', 'monster trucks', 'baseball games', 'paintings', 'old movies', 'TV Series', 'car races', 'video tutorials', 'documentaries', 'martial arts', 'cartoons', 'parades'];
+      var places = ['gardens', 'offices', 'meetups', 'museums', 'basketball courts', 'playgrounds', 'bars', 'planetariums'];
+      var colors = ['blue', 'red', 'green', 'yellow', 'black', 'white', 'orange', 'golden'];
+      var random = ['dawn', 'belt', 'club', 'bat', 'glove', 'stick', 'teddy bear', 'horizon', 'future', 'day'];
+
+      var color = colors[tags.integer(0,colors.length -1)];
+      var random = random[tags.integer(0,random.length -1)];
+      var findmeat = places[tags.integer(0,places.length -1)];
+
+      var index = tags.integer(0, hobby.length -1 );
+      var selectedHobby = hobby[index];
+      var i2 = index-1;
+      if (i2 < 0) {
+        i2 = tags.integer(1, hobby.length -1 );
+      }
+      var secondHobby = hobby[i2];
+
+      var strings = [];
+      strings.push(age + ' years old ' + tags.gender() + ' from ' + this.city + ' (' + this.state + '). No hobbies');
+      strings.push(age + ' years old ' + tags.gender() + ' from ' + this.city + ' (' + this.state + '). Fun is no part of my life');
+      strings.push('I am a ' + age + ' years old ' + tags.gender() + ' from ' + this.city + ' and my life is boring');
+      strings.push('I am a ' + age + ' years old ' + tags.gender() + ' from ' + this.city + ' with no hobbies (I got ' + tags.integer(2,5) + ' kids)');
+      strings.push('I am a ' + age + ' years old ' + tags.gender() + ' from ' + this.city + '. I love ' + selectedHobby);
+      strings.push('I am ' + age + ' and live in ' + this.city + '. I like ' + selectedHobby);
+      strings.push(age + ' years old ' + tags.gender() + ' from ' + this.city + ' (' + this.state + ') loving ' + selectedHobby);
+      strings.push(age + ' years old ' + tags.gender() + ' from ' + this.city + ' (' + this.state + ') you can often find me at ' + findmeat);
+      strings.push(age + ' years old ' + tags.gender() + ' from ' + this.city + ' (' + this.state + '), I love ' + selectedHobby + ' and hang around in ' + findmeat);
+      strings.push(tags.gender() + ', ' + age + '. I live in ' + this.city + ' and love ' + selectedHobby);
+      strings.push(tags.gender() + ', ' + age + '. I live in ' + this.city + ' and love ' + selectedHobby + ' besides ' + findmeat);
+      strings.push(tags.gender() + ', ' + age + '. I live in ' + this.city + ' and enjoy to watch ' + selectedHobby);
+      strings.push(tags.gender() + ', ' + age + '. I live in ' + this.city + '. I spend a lot of time at ' + selectedHobby + ' or at ' + findmeat);
+      strings.push(tags.gender() + ', ' + age + '. I\'m from ' + this.city + ' and spend a lot of time watching ' + selectedHobby + ' or at ' + findmeat);
+      strings.push(tags.gender() + ', ' + age + '. I live in ' + this.city + '. I spend a lot of time watching ' + selectedHobby);
+      strings.push(tags.gender() + '. ' + age + ' Living in ' + this.city + ' and loving ' + selectedHobby);
+      strings.push(color + ' ' + random);
+      strings.push(random + ' always in my mind. Besides ' + selectedHobby + ' :)');
+      strings.push('No signs of ' + random + ' in  ' + tags.city() + ' :(');
+      strings.push(':(');
+      strings.push('Sad');
+      strings.push('Depressed');
+      strings.push('Mood ' + color + ' :)');
+      strings.push('Mood ' + color + ' :-)');
+      strings.push(random + ' freak from ' + tags.city() );
+      strings.push(random + ' :)');
+      strings.push(random + ' :-)');
+      strings.push(random + ' :(');
+      strings.push(random + ' :-(');
+      strings.push('Happy person from ' + tags.city() );
+      strings.push('Happy ' + tags.gender() + ' from ' + tags.city());
+      strings.push(tags.gender() + ', ' + age + ' always dreaming about that ' + random);
+      strings.push('Taking part at ' + selectedHobby + ' is my childhood dream');
+      strings.push('I never get tired of ' + selectedHobby);
+      strings.push('I never get tired of watching ' + selectedHobby);
+      strings.push('I wish I could live off with ' + selectedHobby);
+      strings.push(selectedHobby + ' ain\'t gonna pay my bills');
+      strings.push('I have a boring life');
+      strings.push('Bored most of the time');
+      strings.push('Happiest person in town');
+      strings.push('Happiest person in ' + tags.city());
+      strings.push('Bored most of the time');
+      strings.push('I could spend my whole life watching ' + selectedHobby + '. ' + tags.gender() + ', ' + age + ' from ' + this.city + ' (' + this.state+ ')');
+      strings.push(selectedHobby + ' are my true passion');
+      strings.push('I really like ' + selectedHobby + '. ' + tags.gender() + ', ' + age + ' from ' + this.city + ' (' + this.state+ ')');
+      strings.push('I enjoy ' + selectedHobby + ' a lot. I\'m ' + age + ' and live in ' + this.city + ' (' + this.state+ ')');
+      strings.push('Watching ' + selectedHobby + ' is how I spend my days in my home in ' + this.city + ' (' + this.state+ ')');
+      strings.push('I dig ' + selectedHobby + ' a lot. I\'m ' + age + ' and live in ' + this.city + ' (' + this.state+ ')');
+      strings.push('I enjoy ' + selectedHobby + ' a lot. I\'m ' + age + ' and live in ' + this.city + ' (' + this.state+ ')');
+      strings.push('I am a ' + age + ' years old ' + tags.gender() + ' from ' + this.city + '. I love ' + selectedHobby + ' and ' + secondHobby);
+      strings.push('I am ' + age + ' and live in ' + this.city + '. I like ' + selectedHobby + ' and ' + secondHobby);
+      strings.push(selectedHobby + ' and ' + secondHobby + ' are the things I like the most');
+      strings.push(selectedHobby + ' and ' + secondHobby + ' are the things I love the most');
+      strings.push(selectedHobby + ' and ' + findmeat + ' are the things I love the most');
+
+      return strings[tags.integer(0, strings.length -1 )];
+
+
+    }
+  }
+]
+
