@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "country": "Italy",
+    "value": 15000,
+    "month": 1,
+    "year": 2020
+  },
+  {
+    "id": 2,
+    "country": "Italy",
+    "value": 9000,
+    "month": 2,
+    "year": 2020
+  },
+  {
+    "id": 3,
+    "country": "Canada",
+    "value": 15000,
+    "month": 1,
+    "year": 2020
+  },
+  {
+    "id": 4,
+    "country": "Italy",
+    "value": 4000,
+    "month": 3,
+    "year": 2020
+  },
+  {
+    "id": 5,
+    "country": "Germany",
+    "value": 25000,
+    "month": 1,
+    "year": 2020
+  },
+  {
+    "id": 6,
+    "country": "Spain",
+    "value": 6000,
+    "month": 1,
+    "year": 2020
+  },
+  {
+    "id": 7,
+    "country": "Spain",
+    "value": 11000,
+    "month": 2,
+    "year": 2020
+  }
+]
