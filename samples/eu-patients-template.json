@@ -1,0 +1,35 @@
+[
+  {
+    'repeat(50)': {
+      id: '{{index(451)}}',
+      firstName: '{{firstName()}}',
+      middleName: '{{firstName()}}',
+      lastName: '{{surname()}}',
+      birthDate: '{{moment(this.date(new Date(1940, 0, 1), new Date(1999, 11, 31))).format("DD/MM/YYYY")}}',
+      age: function() {
+        var parts = this.birthDate.split('/');
+      	var mydate = new Date(parts[2], parts[0] - 1, parts[1]);
+      	var ageDifMs = Date.now() - mydate.getTime();
+      	var ageDate = new Date(ageDifMs);
+      	var ageYear = ageDate.getUTCFullYear();
+      	var age = Math.abs(ageYear - 1970);
+        return age;
+      },    
+      sex: '{{random(["male"], ["female"])}}',
+      eyeColor: '{{random("blue", "brown", "green")}}',
+      job: '{{random("programmer", "manager", "CEO", "CTO", "shop assistant", "teacher", "trainer", "architect", "engineer", "security guard", "clerk", "businessman", "entrapreneur", "plumber", "carpenter", "repairman", "maintenance manager", "doctor", "nurse")}}',
+      dryCough: '{{bool()}}',
+      soreTroat: '{{bool()}}',
+      tiredness: '{{bool()}}',
+      headache: '{{bool()}}',
+      smellLoss: '{{bool()}}',
+      chestPain: '{{bool()}}',
+      covidPositive: true,
+      bodyTemperature: '{{floating(36.60, 38.00)}}',
+      location: {
+      	latitude: '{{floating(-1.2477294882, 30.4927689056)}}',
+      	longitude: '{{floating(45.6248156767 , 49.3351648539)}}'
+      }
+    }
+  }
+]
