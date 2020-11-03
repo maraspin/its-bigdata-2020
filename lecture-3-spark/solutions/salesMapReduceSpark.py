@@ -10,4 +10,6 @@ data = spark.read.json('../samples/sales.json', multiLine=True)
 counts = data.rdd.map(lambda row: (str(row["year"]) + "-" + str(row["month"]),row["value"])) \
              .reduceByKey(lambda a, b: a +b)
 
-counts.saveAsTextFile("file:////srv/apps/its-bigdata-2020/balance-results")
+print(counts.collect())
+
+# counts.saveAsTextFile("file:////srv/apps/its-bigdata-2020/lecture-3-spark/solutions/balance-results")
