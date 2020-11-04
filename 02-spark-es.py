@@ -1,3 +1,6 @@
+# Launch this (after running setup.sh) as follows:
+# spark-submit --jars /opt/elasticsearch-spark-20_2.11-7.9.3.jar ./02-spark-es.py
+
 import pyspark
 
 es_conf = {
