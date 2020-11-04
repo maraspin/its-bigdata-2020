@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 # unused in this short course
 rm -rf /var/lib/influxdb

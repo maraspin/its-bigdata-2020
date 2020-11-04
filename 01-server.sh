@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 echo "Starting server..."
 echo "Type words followed by ENTER"
