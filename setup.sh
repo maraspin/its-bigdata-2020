@@ -8,7 +8,6 @@ rm -rf /usr/src/*
 rm /opt/spark-3.0.0-bin-hadoop2.7.tgz
 /usr/bin/apt-get clean
 /usr/bin/apt-get autoclean
-rm -rf /srv/apps/*
 
 # it's a development environment, we can clean older logs...
 journalctl --vacuum-size=5M
